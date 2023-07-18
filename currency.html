@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  outline: none;
+  
+}
+body {
+  background-image: url('currency.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height:100vh;
+  width:100%;
+}
+.wrapper {
+  width: 90%;
+  max-width: 25em;
+  background: rgba(255,255,255,0.05);
+    border-radius:6px;
+    overflow:hidden;
+    z-index:10;
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  padding: 2em;
+  border-radius: 0.8em;
+}
+.app-details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.app-icon {
+  width: 9.37em;
+}
+.app-title {
+  font-size: 1.6em;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+label {
+  display: block;
+  font-weight: 600;
+}
+input#amount {
+  font-weight: 400;
+  font-size: 1.5em;
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid #02002c;
+  color: #7a789d;
+  margin-bottom: 2em;
+  padding: 0.5em;
+}
+input#amount:focus {
+  color: #9873fe;
+  border-color: #9873fe;
+}
+input#amount:hover{
+    cursor: pointer;
+    background:rgb(245, 95, 8);;
+    color:white;
+    font-size:1.5em;
+    font-weight:100;
+
+}
+.dropdowns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+select {
+  width: 100%;
+  padding: 0.6em;
+  font-size: 1.5em;
+  font-weight: 100;
+  border-radius: 0.2em;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 15px top 50%, center;
+  background-size: 20px 20px;
+  background-color: rgb(228, 142, 13);;
+  color: black;
+}
+select:hover{
+    cursor: pointer;
+    background:rgb(245, 95, 8);;
+    color:white;
+    font-size:1.5em;
+    font-weight:100;
+}
+select option {
+  background-color: #ffffff;
+  color: #02002c;
+}
+button {
+  font-size: 1.5em;
+  width: 100%;
+  background-color:rgb(228, 142, 13);;
+  padding: 1em 0;
+  margin-top: 2em;
+  border-radius: 0.3em;
+  color: black;
+  font-weight: 600;
+}
+button:hover{
+    cursor: pointer;
+    background:rgb(245, 95, 8);;
+    color:white;
+    font-size:1.5em;
+    font-weight:100;
+}
+#result {
+  font-size: 1.5em;
+  font-weight: 100;
+  text-align: center;
+  margin-top: 1em;
+  color: #02002c;
+  background-color:rgb(228, 142, 13);;
+  padding: 0.8em 0;
+}
+#result:hover{
+    cursor: pointer;
+    background:rgb(245, 95, 8);;
+    color:white;
+    font-size:1.5em;
+    font-weight:100;
+}
+.a{
+    font-size: 2.5em ; 
+    font-weight: 200; 
+    color:rgba(245, 95, 8);
+    margin-left:30% ;
+}
+
+        </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="app-details">
+        <h1 class="app-title">Currency Converter</h1>
+      </div>
+      <label for="amount" class="a">Amount:</label>
+      <input type="number" id="amount" value="100" />
+      <div class="dropdowns">
+        <select id="from-currency-select"></select>
+        <select id="to-currency-select"></select>
+      </div>
+      <button id="convert-button">Convert</button>
+      <p id="result"></p>
+    </div>
+    <script>let apiKey = "7bf10261429386c63ef42fe0";</script>
+    <script src="currency-codes.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".app-icon"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2,
+        });
+     </script>
+  </body>
+</html>
